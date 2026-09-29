@@ -63,9 +63,14 @@ See [ROADMAP](ROADMAP.md) for milestones and [CHANGELOG](CHANGELOG.md) for a hig
 - [Architecture](docs/ARCHITECTURE.md)
 - [Development status](docs/DEVELOPMENT_STATUS.md)
 - [Editor adapters](docs/EDITOR_ADAPTERS.md)
+- [Qualification strategy](docs/QUALIFICATION_STRATEGY.md)
 - [Safety and validation](docs/SAFETY_AND_VALIDATION.md)
 - [Security](SECURITY.md)
 
 ## Availability
 
 Project Relay is in pre-alpha development. It is not currently presented as a production-ready product or public download.
+
+## Trademarks
+
+Filmora, DaVinci Resolve, and Adobe Premiere Pro are trademarks of their respective owners. Project Relay is not affiliated with or endorsed by their respective owners.
