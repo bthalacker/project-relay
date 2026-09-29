@@ -1,0 +1,33 @@
+# Environment variables and local credentials
+.env
+.env.*
+!.env.example
+credentials.*
+secrets.*
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Python caches and virtual environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+ENV/
+
+# Build output
+build/
+dist/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Filmora project files
+*.wfp
