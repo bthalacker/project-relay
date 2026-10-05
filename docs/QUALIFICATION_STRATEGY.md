@@ -1,6 +1,8 @@
 # Qualification strategy
 
-Project Relay is in pre-alpha. This document describes the intended qualification methodology, not a claim that every step is complete or that any adapter is production-ready.
+Project Relay is in pre-alpha. This document describes the qualification methodology and the limits of current results, not a claim that every step is complete or that any adapter is production-ready.
+
+A limited deterministic Filmora workflow has completed live qualification through planning, guarded execution, saved-project verification, and verified rollback. Qualification against human-reviewed reference results continues, and broader operation coverage and generalization remain open work.
 
 ## Establish a human-reviewed reference
 
@@ -24,7 +26,7 @@ Restore a clean project state between repeat runs and use the same defined input
 
 ## Extend qualification across editors
 
-Where practical, use the same editor-neutral edit-plan cases to qualify each adapter. Filmora is the first adapter under development and qualification. DaVinci Resolve and Adobe Premiere Pro adapters are planned; cross-editor qualification can happen only when those adapters exist and are ready to evaluate.
+Where practical, use the same editor-neutral edit-plan cases to qualify each adapter. Filmora is the first adapter; qualification currently applies to a limited deterministic subset. DaVinci Resolve and Adobe Premiere Pro adapters are planned; cross-editor qualification can happen only when those adapters exist and are ready to evaluate.
 
 ## Qualification decisions
 

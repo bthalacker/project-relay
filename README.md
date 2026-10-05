@@ -36,25 +36,28 @@ Execution
 Validation / Reconciliation
 ```
 
-The analysis system is intended to produce an editor-neutral edit plan. Adapters translate that plan for supported editors, keeping core analysis independent from any one editor. Validation and reconciliation are intended to check whether the resulting project matches the plan and to surface unexpected conditions.
+The analysis system is intended to produce an editor-neutral edit plan. Adapters translate that plan for supported editors, keeping core analysis independent from any one editor. Validation and reconciliation check whether the resulting project matches the plan and surface unexpected conditions.
 
 ## Current development
 
-**Pre-alpha. Active development. Filmora is the first editor adapter under development and qualification. DaVinci Resolve and Adobe Premiere Pro adapters are planned for future development.**
+**Pre-alpha. Active development. A limited deterministic Filmora workflow has completed live qualification through planning, guarded execution, saved-project verification, and verified rollback.** Filmora is the first adapter; broader operation coverage and qualification remain in progress. DaVinci Resolve and Adobe Premiere Pro adapters are planned for future development.
 
-Semantic media analysis and the edit-plan architecture are in place. Automated Filmora timeline interaction is under active qualification. Work emphasizes validation, reconciliation, failure detection, safe stops, automated testing, and qualification with media. These are development activities, not claims of production readiness or a public download.
+The qualified subset uses project-bound video/audio ownership evidence and distinguishes acoustic observations from editorial audio ownership. It supports frame-accurate, source-bound structural planning where evidence permits, expected Open and Save As dialog states, and reviewed audio transitions whose durations derive from overlap geometry. Uncertain cases remain gated for review. More than 200 automated regression checks are currently passing.
+
+This progress does not mean all Filmora editing is supported, that artistic decisions are automated, or that the product is production-ready. Continued work focuses on broader coverage, generalization, audio preservation, and end-to-end reliability.
 
 ## Design principles
 
 - Keep the core analysis and edit plan independent of a specific editor.
 - Give users a chance to review proposed changes before execution.
-- Verify editor state and expected results.
+- Use evidence to support planning and guarded execution.
+- Verify editor state and expected results, including safe recovery.
 - Preserve source media and stop safely when conditions are unexpected.
 - Expand editor support only as adapters can be qualified.
 
 ## Roadmap
 
-Near-term work focuses on qualifying Filmora automation, improving verification and recovery, and building a reliable end-to-end project workflow. The intended 1.0 goal includes Filmora, DaVinci Resolve, and Adobe Premiere Pro adapters; these are goals, not commitments or release-date promises.
+Current priorities include broadening structural-edit coverage, completing remaining audio ownership and preservation decisions, expanding end-to-end qualification, improving generalization and review handling, and continuing safety and recovery qualification. The intended 1.0 goal includes Filmora, DaVinci Resolve, and Adobe Premiere Pro adapters; these are goals, not commitments or release-date promises.
 
 See [ROADMAP](ROADMAP.md) for milestones and [CHANGELOG](CHANGELOG.md) for a high-level development summary.
 

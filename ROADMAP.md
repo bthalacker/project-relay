@@ -4,9 +4,13 @@ This roadmap describes current areas of work and possible future goals for Proje
 
 ## Current development
 
-- Complete and qualify the first Filmora automation adapter.
-- Improve edit verification, reconciliation, and safe recovery.
-- Build a reliable full-project workflow.
+A limited deterministic Filmora workflow has completed live pre-alpha qualification. Current priorities build on that baseline:
+
+- Broaden deterministic structural-edit coverage.
+- Complete remaining audio ownership and preservation decisions.
+- Expand end-to-end project qualification against human-reviewed references.
+- Improve generalization beyond development examples and reduce review-gated cases where evidence supports it.
+- Continue transition/audio qualification and safety, recovery, and repeatability work.
 
 ## Alpha goal
 
