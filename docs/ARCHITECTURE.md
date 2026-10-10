@@ -6,6 +6,13 @@ Project Relay is designed around an editor-neutral analysis flow with editor-spe
 
 The analysis layer examines existing media and identifies meaningful content and candidate edits. Its intended output is independent of the target editor.
 
+## Candidate indexing and navigation — planned separation
+
+Heavy media analysis should produce reusable candidate locations ahead of
+interaction. A local index and deterministic navigation path are planned so an
+interactive jump need not wait for another AI reasoning cycle. Low-latency search
+and reliable standalone jumps are not demonstrated product capabilities.
+
 ## Semantic edit plan
 
 Analysis is represented as a semantic edit plan: a description of proposed changes and their relationships, rather than a sequence tied to one editor's interface. The plan is intended to be reviewable before execution.
@@ -23,6 +30,19 @@ Filmora is the first adapter. A limited deterministic workflow has completed liv
 ## Evidence-bound execution
 
 The execution layer applies approved plan operations through guarded adapter actions when required project-bound evidence and expected editor states are available. Expected dialog states, such as opening or saving a project under a new name, are part of the workflow model. If conditions are uncertain or diverge from expectations, execution can stop and request review.
+
+## Guided human control and approval
+
+The intended guided flow separates candidate detection, editor navigation,
+human control, saved-result verification, and approval. One bounded manual
+handoff has been demonstrated: navigate, yield control, accept the user's saved
+edit, record observed differences, and pause. Navigation currently requires
+development assistance; repeated-session reliability remains unqualified.
+
+Automatic proposals require separate qualification and human confirmation.
+An original proposal and a later human correction must remain distinct evidence.
+Recorded observations can inform tested rules but cannot establish artistic
+intent, grant future editorial permission, or automatically retrain a model.
 
 ## Verification, reconciliation, and recovery
 

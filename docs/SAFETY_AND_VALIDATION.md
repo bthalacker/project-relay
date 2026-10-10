@@ -11,3 +11,16 @@ Project Relay is being designed to make editing automation observable and to red
 - Continue testing repeatability and safe failure behavior against human-reviewed references.
 
 Broader operation coverage, recovery behavior, and end-to-end qualification remain in progress. This document does not claim support for all Filmora editing or production readiness.
+
+## Guided human editing
+
+The guided design requires complete release of editor control while the person
+edits. After Done, saved identity and state must be verified before comparing
+changes or permitting further automated input. One bounded handoff and pause have
+been demonstrated; wider reliability remains unqualified. User originals and
+accepted projects must remain distinct from disposable work.
+
+Known-checkpoint recovery is different from selectively undoing an earlier edit
+or accepting an arbitrary partially edited project. Selective restore, a visible
+backup-management interface, and optional cleanup remain planned or exploratory.
+No general recovery guarantee is made. See [Product experience](PRODUCT_EXPERIENCE.md).

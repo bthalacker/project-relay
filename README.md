@@ -4,19 +4,19 @@
 **Status:** Pre-alpha · active development  
 **Development version concept:** `0.0.1-dev`
 
-Project Relay is a vendor-neutral video editing automation platform in development. It is intended to analyze existing media, create semantic edit plans, carry out approved plans through editor-specific adapters, and verify the results.
+Project Relay is a vendor-neutral video editing automation platform evolving toward **Guided Adaptive Editing**. It aims to find useful edit locations, guide the editor to them, support manual editing or separately qualified proposals, and verify saved results through editor-specific adapters.
 
 Project Relay is a development codename, not the final commercial product name or a trademark claim.
 
 ## The problem
 
-Repetitive and precision-sensitive edits can take substantial time and are easy to apply inconsistently. Project Relay aims to help automate this work while keeping people in control of what changes: users should be able to review proposed edits before execution and verify the outcome afterward.
+Repetitive and precision-sensitive edits can take substantial time and are easy to apply inconsistently. Project Relay aims to reduce the total human time to an accepted edit: finding it, editing, reviewing, correcting, and recovering. The editor keeps creative control; a saved cut does not explain its artistic purpose.
 
 ## Intended workflow
 
-Import media → Analyze → Review proposed edits → Execute → Verify → Complete
+Find → Navigate → Edit manually or review a qualified proposal → Save → Verify → Capture changes → Continue or QC
 
-This is a long-term product direction. The complete graphical workflow does not exist yet, and the GUI is not currently the primary production interface.
+This is the intended product flow. **One live manual handoff has been demonstrated**, not the full repeated-session workflow. Automatic editorial proposals are not qualified. The current guided prototype requires active development assistance for navigation; fast standalone seeking is planned.
 
 ## High-level architecture
 
@@ -40,11 +40,28 @@ The analysis system is intended to produce an editor-neutral edit plan. Adapters
 
 ## Current development
 
-**Pre-alpha. Active development. A limited deterministic Filmora workflow has completed live qualification through planning, guarded execution, saved-project verification, and verified rollback.** Filmora is the first adapter; broader operation coverage and qualification remain in progress. DaVinci Resolve and Adobe Premiere Pro adapters are planned for future development.
+**Pre-alpha. One bounded guided manual-editing pilot has been demonstrated.**
+Relay navigated to a candidate, fully handed control to the editor, captured the
+saved manual change, recorded observed differences without inventing artistic
+intent, and paused safely. The accompanying validation recorded **27/27 focused
+tests passing**. Automatic proposal lifecycle checks used a simulated executor;
+no live automatic editorial proposal was qualified.
 
-The qualified subset uses project-bound video/audio ownership evidence and distinguishes acoustic observations from editorial audio ownership. It supports frame-accurate, source-bound structural planning where evidence permits, expected Open and Save As dialog states, and reviewed audio transitions whose durations derive from overlap geometry. Uncertain cases remain gated for review. More than 200 automated regression checks are currently passing.
+An earlier blind saved-project comparison identified **eight picture-removal
+spans, eight audio-removal spans, four retained detached-audio clips, and three
+positive saved fade-outs**. These are observations of saved settings, not proof
+of rendered sound quality or the reason for each edit.
 
-This progress does not mean all Filmora editing is supported, that artistic decisions are automated, or that the product is production-ready. Continued work focuses on broader coverage, generalization, audio preservation, and end-to-end reliability.
+The earlier limited deterministic Filmora workflow remains a separate bounded
+qualification result, covering approved planning, guarded execution, saved-state
+verification, and verified rollback. It does not establish general autonomous
+editing competence or qualify the guided automatic-proposal path. Filmora 14 is
+the initial guided development target; future adapters remain planned.
+
+Repeated guided-session reliability, rapid standalone navigation, prospective
+editorial decisions, and unattended completion remain unqualified. Project Relay
+is not production-ready and no public beta is available. See
+[Development status](docs/DEVELOPMENT_STATUS.md) for the scope of each result.
 
 ## Design principles
 
@@ -57,14 +74,21 @@ This progress does not mean all Filmora editing is supported, that artistic deci
 
 ## Roadmap
 
-Current priorities include broadening structural-edit coverage, completing remaining audio ownership and preservation decisions, expanding end-to-end qualification, improving generalization and review handling, and continuing safety and recovery qualification. The intended 1.0 goal includes Filmora, DaVinci Resolve, and Adobe Premiere Pro adapters; these are goals, not commitments or release-date promises.
+The next milestone is repeated, reliable guided editing with accurate navigation
+and safe handoffs. Further goals include a fast local candidate index, searchable
+detection, reviewed adaptive proposals, integrated QC, verified backups, selective
+restoration, and beta testing. Filmora, DaVinci Resolve, and Adobe Premiere Pro
+remain an intended longer-term adapter direction, not a support or release promise.
 
-See [ROADMAP](ROADMAP.md) for milestones and [CHANGELOG](CHANGELOG.md) for a high-level development summary.
+See the visual [Roadmap](ROADMAP.md), the [Product experience concept](docs/PRODUCT_EXPERIENCE.md),
+and the [Changelog](CHANGELOG.md). Milestones will be updated as evidence changes;
+there are no speculative completion dates.
 
 ## Project documentation
 
 - [Architecture](docs/ARCHITECTURE.md)
 - [Development status](docs/DEVELOPMENT_STATUS.md)
+- [Product experience concept](docs/PRODUCT_EXPERIENCE.md)
 - [Editor adapters](docs/EDITOR_ADAPTERS.md)
 - [Qualification strategy](docs/QUALIFICATION_STRATEGY.md)
 - [Safety and validation](docs/SAFETY_AND_VALIDATION.md)

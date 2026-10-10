@@ -31,3 +31,17 @@ Where practical, use the same editor-neutral edit-plan cases to qualify each ada
 ## Qualification decisions
 
 Set acceptance criteria before a campaign begins. Describe which cases were run, what passed or failed, how safely detected failures were handled, and what limitations remain. Qualification should support a clear, repeatable claim about a defined workflow rather than imply broader support than the evidence shows.
+
+## Guided prototype qualification boundary
+
+The first guided milestone demonstrated one manual handoff and saved-change
+capture, with 27 recorded focused tests passing. Proposal/approval/correction
+lifecycle tests used a simulated executor. They do not qualify a live automatic
+editorial proposal. Earlier held-out examples test recognition of observed saved
+changes, not prospective artistic choices.
+
+Further qualification needs consecutive guided cycles, representative navigation
+and latency measurements, interrupted saves, unknown external changes, rejected
+proposals, and verified recovery. Report actual live scope separately from unit
+tests and simulations. Saved geometry alone does not establish editorial or
+rendered audiovisual correctness. See [Development status](DEVELOPMENT_STATUS.md).
