@@ -1,162 +1,112 @@
-# Project Relay — Product Roadmap
+# Project Relay — Product and Engineering Roadmap
 
-> **Status: pre-alpha | Development codename | Updated October 2026**
->
-> **Vision:** Make editing faster without taking creative control away from the editor.
-> Project Relay aims to find useful edit locations, guide people to them, automate
-> appropriately verified repetitive tasks, and make every change reviewable and recoverable.
->
-> This is a **milestone roadmap**, not a release schedule or a feature availability promise.
-> Features shown as planned or exploratory are not available in a public product.
+**Pre-alpha · Development codename · Updated October 15, 2026**
 
-## The product we're building
+**Vision:** Reduce repetitive video-editing work while keeping the editor in
+control of meaning, pacing and the final result.
 
-Instead of requiring someone to scrub through hours of footage—or trust an
-unreviewed fully automatic edit—Relay is intended to offer a practical middle
-ground:
+This is a milestone roadmap, not a release schedule or an availability promise.
+Workstreams overlap. A bounded demonstration does not complete a whole phase.
 
-1. **Find:** Scan media and identify candidate cuts, silences, transitions,
-   titles, recurring footage, and audio concerns.
-2. **Go:** Navigate directly to the selected location in the supported editor.
-3. **Choose:** Let Relay propose a qualified action, or take over and edit normally.
-4. **Confirm:** Review the result and correct it when needed.
-5. **Remember:** Record approved saved changes as evidence for future rule testing.
-6. **Review and recover:** Revisit flagged edits or restore verified work when possible.
-
-The goal is to reduce **total human time per accepted edit**, including seeking,
-editing, quality control, correction, and recovery.
-
-### Product experience — concept
+## Milestone map
 
 ```mermaid
 flowchart TD
-    A["Choose what to find"] --> B["Analyze and index candidate locations"]
-    B --> C["Jump to the next candidate"]
-    C --> D{"Is a proposed action independently qualified?"}
-    D -- "Yes" --> E["Relay proposes edit for review"]
-    D -- "No" --> F["Editor takes control"]
-    E --> G{"Editor approves?"}
-    G -- "No, correct it" --> F
-    G -- "Yes" --> H["Verify saved result"]
-    F --> I["Editor saves and selects Done"]
-    I --> H
-    H --> J["Checkpoint and capture verified changes"]
-    J --> K["Next candidate or quality-control queue"]
-    K --> C
+    A["1. Foundation — bounded demonstrations"] --> B["2. Guided Editing — partially demonstrated"]
+    B --> C["3. Adaptive Automation — experimental"]
+    C --> D["4. Integrated QC — experimental"]
+    D --> E["5. Selective Restoration — bounded live demonstration"]
+    E --> F["6. Product Reliability — qualification in progress"]
+    F --> G["7. External Beta — planned, not open"]
+    G --> H["8. Future Integrations — planned or exploratory"]
 ```
 
-*This depicts the intended product flow. Only a bounded, human-operated
-guided handoff and saved-change capture have been demonstrated so far;
-automatic proposals are not yet independently qualified.*
+| Phase | Current position | Evidence required to advance |
+| --- | --- | --- |
+| **1. Foundation** | **Demonstrated in bounded workflows.** Media analysis, native project inspection, source mapping and saved-change comparison support current experiments. | Broader supported media/project structures, independently checked boundaries and source coverage, with explicit handling of unsupported cases. |
+| **2. Guided Editing** | **Partially demonstrated.** One live manual handoff/capture, a V2 desktop workspace and focused session tests. Two later shared-navigation checks passed. | Repeated live navigate → handoff → save → capture cycles; reliable pause/resume, exact current-state navigation and measured latency across representative projects. |
+| **3. Adaptive Automation** | **Experimental, with bounded authorized execution demonstrated.** Eleven automatic edits and one later reviewed edit completed in separate verified continuation work. | Tested rules derived from approved examples, positive/negative and held-out cases, explicit editorial authority, and no duplicate changes. General audio/artistic choices remain blocked. |
+| **4. Integrated Quality Control** | **Experimental.** Prioritized context/review queue and isolated unapproved proposals prepared. | Consecutive live playback, approve/defer/correct/save/resume cycles; unrelated work preserved; rendered picture and audio checked. This is required for the eventual 0.1 experience. |
+| **5. Selective Restoration** | **Bounded live demonstration.** An earlier isolated edit was restored while ten later edits and 37 saved fade settings remained intact. | Complete human correction-and-resume qualification, more supported edit types, dependency/conflict handling and preservation of later work. Several inverse scenarios remain gated. |
+| **6. Product Reliability** | **Limited checkpoint/recovery foundations demonstrated; product work remains.** | Performance, verified backups, crash/interrupted-save tests, understandable history, installation, accessibility and usability testing. No guaranteed recovery claim. |
+| **7. External Beta** | **Planned; not open.** No external media intake or production pilot is authorized. | Supported-workflow assessment, permission/privacy/retention process, isolated tests, qualified recovery, actionable failure reports and a useful measured workflow. |
+| **8. Future Integrations** | **Planned or exploratory.** Filmora is the initial adapter target. | Separate implementation and qualification for additional editors; feasibility work for possible native processing capabilities. |
 
-## Milestones
+## The intended editing and QC flow
 
 ```mermaid
-flowchart LR
-    A["Foundation<br/>Saved-change comparison"] --> B["Guided editing<br/>Reliable human handoffs"]
-    B --> C["Fast local navigation<br/>Search and indexed jumps"]
-    C --> D["Editing + QC<br/>One review workflow"]
-    D --> E["Safety and reliability<br/>Recovery and beta testing"]
-    E -. "Longer-term research" .-> F["Selective restore<br/>Broader editor support"]
+flowchart TD
+    A["Find a candidate"] --> B["Navigate and verify the location"]
+    B --> C{"Qualified action and editorial permission?"}
+    C -- "Yes" --> D["Propose or execute within approved scope"]
+    C -- "No" --> E["Human edits or defers"]
+    D --> F["Review picture and audio context"]
+    E --> G["Verify the saved result"]
+    F --> H{"Accept, defer or correct?"}
+    H -- "Accept" --> G
+    H -- "Defer" --> I["Keep the issue unresolved"]
+    H -- "Correct" --> J["Restore only if supported and safe"]
+    J --> E
+    G --> K["Record observed changes and checkpoint"]
 ```
 
-*Workstreams can overlap. This diagram indicates direction, not release dates.*
+*Concept diagram: the full loop is not yet qualified. An unsupported restoration
+must remain blocked; it cannot silently become a whole-project rollback.*
 
-| Milestone | Current status | What must be demonstrated before calling it complete |
-| --- | --- | --- |
-| **Saved-edit comparison** | **Prototype demonstrated** | Expand supported project structures and validate comparisons across more real projects without mistaking saved geometry for editorial intent. |
-| **Guided human editing** | **First live manual handoff demonstrated** | Repeated navigate → handoff → save → capture → advance cycles, including pause, resume, interruption, and recovery. |
-| **Fast navigation and discovery** | **Planned** | Build a local candidate index and direct navigation path; measure speed and landing accuracy rather than relying on per-click AI or manual timecode entry. |
-| **Searchable edit targets** | **Planned** | Allow filters and plain-language requests such as silences above a threshold, transitions, titles, and repeated segments; validate each detector. |
-| **Adaptive automatic proposals** | **Research / not qualified** | Use confirmed examples, explicit evidence, held-out tests, and human approval before allowing a proposed edit. Similarity alone never grants permission. |
-| **Integrated quality control** | **Planned** | Use the same navigation queue to visit flagged or completed edits, listen/view context, confirm, correct, and resume. |
-| **Project history and backup controls** | **Limited recovery foundation demonstrated; product controls planned** | Verified checkpoints, restart recovery, visible storage usage, protected originals, and explicit optional cleanup. |
-| **Selective edit/section restore** | **Exploratory** | Restore an earlier isolated edit while preserving independent later changes; detect and preview dependencies or conflicts. |
-| **External beta** | **Not open** | Reliable onboarding, meaningful measured time savings, safe recovery, actionable error handling, documented limitations, and real user testing. |
-| **More editor integrations** | **Long-term goal** | Independently qualify editor-specific adapters; the current development focus is Filmora. |
+## Evidence behind the current positions
 
-## Evidence from the current pre-alpha
+- Earlier saved-change work identified removed picture/audio, retained detached
+  audio and saved fades. One blind comparison found eight picture removals,
+  eight audio removals, four retained audio clips and three positive saved fade-outs.
+- The initial guided pilot demonstrated one live manual handoff and capture,
+  with **27/27** focused tests recorded for that scope.
+- **October 10:** V2 workspace/session work recorded **60/60** focused tests.
+  Repeated sequences in that run were synthetic; no new live editing cycle ran.
+- **October 13:** a bounded continuation completed eleven authorized edits,
+  followed by one additional previously reviewed edit. Protected history and
+  saved source coverage were checked; the entire video project was not completed.
+- **October 13:** selective-restoration and Batch QC V3 work recorded **59**
+  focused tests passing and the bounded live restoration described above.
 
-- Native saved-project comparison recovered removed video and audio intervals,
-  retained detached audio, and serialized fade settings in a bounded test.
-- Observation rules recognized **6 of 6** held-out examples in the initial
-  comparison experiment, with **20 focused tests** passing. This demonstrates
-  **recognition of saved changes**, not the ability to choose artistic edits.
-- A later blind saved-project comparison identified **eight video removals,
-  eight audio removals, four retained detached audio clips, and three
-  positive saved fade-outs** without receiving an explanation of those edits.
-- One live guided-editing session successfully navigated to a candidate,
-  handed control to the editor, captured the saved manual change, and paused
-  safely. The accompanying validation recorded **27 of 27 focused tests passing**.
-  Navigation required active development assistance; this was not a standalone
-  rapid-seeking demonstration. Automatic-proposal lifecycle checks used a
-  simulated executor, not a qualified live automatic editorial proposal.
+These counts belong to different scopes and are not added into a combined
+qualification score. Automated checks do not establish artistic quality.
 
-These are **limited prototype observations**, not independent performance
-benchmarks or evidence that unattended editing works. Rendered audiovisual
-quality, general navigation reliability, and automatic editorial decisions
-need further qualification.
+## Product goals that remain in scope
 
-## Non-negotiable design principles
+- **Fast navigation and searchable detection:** a reusable local candidate index,
+  filters for supported pauses, transitions, titles and recurring material,
+  and measured latency and landing accuracy. No per-click AI delay is a design
+  goal, not an achieved performance guarantee.
+- **User-approved adaptive proposals:** record what a saved edit changed; ask
+  briefly about intent only when needed. A correction does not automatically
+  retrain a model or authorize another similar edit.
+- **Integrated QC:** share navigation and context between editing and review,
+  keep unapproved proposals distinct, and support correction without losing
+  unrelated later work where the inverse is qualified.
+- **Verified backups and history:** checkpoint verification, clear restore
+  choices, visible storage use and explicit optional cleanup limited to
+  Relay-owned temporary data. Preserve originals and accepted projects.
+- **A usable application:** project creation/media import, onboarding,
+  configuration, accessible controls, installation and copyright-safe demos.
+- **Future editors:** DaVinci Resolve and Adobe Premiere Pro remain planned
+  directions, not current support or release commitments. A native processing
+  backend and possible native timeline capabilities remain exploratory.
 
-**The human stays in control.** A user can choose to edit manually, reject
-proposed changes, or postpone uncertain work. Relay should never claim to know
-an artistic reason solely from project geometry.
+## Before external testing
 
-**Interactive actions should feel immediate.** Expensive AI/media analysis
-should be performed ahead of interaction when feasible. Navigation should use
-local indexes and verified editor controls. Low-latency seeks are a performance
-goal, **not a current guarantee**.
+The project must qualify a useful supported workflow, recovery and clear failure
+handling before accepting outside content. Permissions, private handling,
+retention/deletion, test isolation and feedback arrangements must be agreed first.
+See [External-testing readiness](docs/EXTERNAL_TESTING.md).
 
-**Editing and QC share one workflow.** The same candidate location and
-navigation system should help users make edits and inspect completed ones.
+## Keep this roadmap current
 
-**Learning is evidence-based.** Relay can record approved examples and test
-reusable decision rules. Capturing one correction does not automatically
-retrain an AI model or authorize the next similar edit.
+Update this roadmap, [Development status](docs/DEVELOPMENT_STATUS.md) and
+[Changelog](CHANGELOG.md) together after verified milestones or changed limits.
+Feature ideas should record the editing problem, desired outcome, priority,
+dependencies, acceptance criteria and status. Completion needs evidence of its
+declared scope, not just a checked box. Do not attach private media, project files
+or internal evidence to public issues.
 
-**Recovery is built in, not bolted on.** Originals and user-authored projects
-must remain distinct from temporary working copies. Checkpoints and restore
-paths need real tests. Relay-owned backups may be cleaned up only after
-informed, explicit user confirmation.
-
-**Editor compatibility is earned through testing.** A feature validated in one
-editor or workflow is not automatically supported elsewhere.
-
-## What comes before a beta
-
-Before inviting external editors to test Relay, the project should demonstrate:
-
-- Several consecutive guided sessions with reliable current-location seeking,
-  editor-control handoff, saved-state capture, and safe resume.
-- A useful candidate-search and QC flow that saves measurable time compared
-  with editing without Relay.
-- Recovery under crashes, interrupted saves, missing assets, and rejected
-  proposals without sacrificing original work.
-- Honest feature boundaries, reproducible tests, accessible controls, clear
-  installation guidance, and a straightforward issue-reporting process.
-- An explicit opt-in for any automatic action not already confirmed by the user.
-
-## Preserved longer-term directions
-
-The earlier roadmap also identified project creation/media import, onboarding
-and configuration, copyright-safe demonstrations, and a stable graphical workflow.
-These remain planned. Filmora, DaVinci Resolve, and Adobe Premiere Pro are an
-intended longer-term adapter direction; none is promised for a particular release.
-
-A native media-processing backend and optional native timeline/editor capabilities
-remain exploratory possibilities. They are not implemented product commitments.
-
-## Follow development
-
-The public [development status](docs/DEVELOPMENT_STATUS.md),
-[changelog](CHANGELOG.md), and this roadmap describe **different things**:
-what has actually been tested, what changed, and what we hope to develop next.
-Update these together after a verified milestone, changed dependency, or revised
-priority. Feature suggestions should include the editing problem, desired outcome,
-priority, dependencies, and an observable acceptance criterion. Do not attach
-private media, project files, credentials, or internal evidence to public issues.
-
-Project Relay is a development codename, not the final commercial product
-name. It is currently pre-alpha, **not a publicly released beta**.
-No dates or third-party editor support are promised.
+See the [Product experience](docs/PRODUCT_EXPERIENCE.md),
+[potential use cases](docs/USE_CASES.md) and [Qualification strategy](docs/QUALIFICATION_STRATEGY.md).

@@ -1,94 +1,100 @@
-# Project Relay — Product Experience (Concept)
+# Project Relay — Intended Product Experience
 
-> **Design concept, not a shipping feature list.**
-> Project Relay is in pre-alpha. The complete experience below does not yet exist.
+**Concept, not a shipping feature list.** Relay is pre-alpha. Parts have been
+demonstrated, but the complete application experience below does not yet exist.
 
-## A simple editing session
+## An educator's example
 
-The user opens a project and tells Relay what kind of edit to find:
+An educator has a two-hour recorded training session. Relay could eventually
+find candidate pauses, repeated material, unwanted sections and transitions,
+then present a short queue explaining what might need attention.
 
-- “Find silences longer than two seconds.”
-- “Show possible scene transitions.”
-- “Find title cards or recurring bumper sequences.”
-- “Take me to audio overlaps I should check.”
+Rather than repeatedly searching the timeline, the editor selects a candidate
+and Relay navigates to the relevant location. The editor can review a separately
+qualified proposal or take control and make the edit normally. After saving,
+Relay checks the saved changes and records what actually changed.
 
-Relay's intended workflow is to analyze footage in the background, index
-candidate locations, and present a queue with concise descriptions and
-confidence indicators. The editor selects **Next** or picks a result to go
-directly to that location.
+The educator keeps responsibility for instructional meaning: a pause may give
+learners thinking time, and a repeated explanation may be useful reinforcement.
+Detection is not permission to remove content.
 
-For each candidate, one of two paths is available:
+**This educational workflow has not been validated as a complete experience.**
+There is no production-use or time-saving claim for a two-hour training recording.
 
-**Guided manual editing.** Relay navigates and fully yields control.
-The editor makes any preferred changes in the native editing program,
-saves, and clicks **Done Editing**. Relay compares saved versions, records
-what changed, and advances.
+## Find, go, choose
 
-**Reviewed automatic proposal.** For a separately qualified edit category,
-Relay proposes an edit on an isolated working copy. The editor approves
-it or makes a correction. Approval and correction history become distinct
-evidence. Automatic proposals are **not qualified today**.
+Planned searches could include:
 
-## Quality control without a second learning curve
+- “Find pauses longer than two seconds.”
+- “Show possible transitions and recurring title sequences.”
+- “Find repeated material for me to check.”
+- “Take me to audio overlaps that may need attention.”
 
-The planned navigation queue is intended to support **Quality Control** mode:
+The intended design does heavy analysis ahead of interaction and reuses an index
+for navigation. Each detector and navigation path needs its own qualification.
+“Instant” remains a goal; current bounded landing checks are not a broad speed benchmark.
 
-1. Visit edited locations, uncertain boundaries, and detected anomalies.
-2. Play or inspect relevant context in the editor.
-3. Mark **Correct**, **Fix It**, or **Review Later**.
-4. After a fix, capture the saved differences and update the issue status.
-5. Advance without requiring the editor to interpret internal frame maps.
+For a supported candidate:
 
-A later, separately qualified batch mode may allow approved categories to run
-with checkpoints, followed by this QC queue. It must not silently treat
-uncertain decisions as approved.
+- **Guided manual editing:** Relay yields control. The editor edits normally,
+  saves in the editor and selects **Done Editing** to capture verified changes.
+- **A qualified proposal or approved batch:** Relay uses an isolated working
+  copy and only the permitted edit scope. Proposed artistic choices remain
+  unapproved until the user accepts them; successful saving is not approval.
+- **Defer:** unsupported or ambiguous work stays visible for later review.
 
-## Recoverability and trust
+## Review a batch without starting over
 
-The intended **History & Recovery** screen would distinguish:
+The intended integrated QC flow visits each affected area with enough picture
+and separately identifiable audio context to make an editing decision:
 
-- **Restore checkpoint:** Return to a previously verified project state.
-- **Restore selected edit:** Reverse one earlier edit, preserving independent
-  later changes when dependency checks permit. This is future research.
-- **Temporary storage cleanup:** Show Relay-generated files and estimated
-  recoverable disk space, then request explicit confirmation.
-- **Keep originals:** User source media and accepted finished projects are
-  never treated as disposable backups.
+1. **Looks Good:** accept this specific result.
+2. **Not Good — Let Me Edit:** restore only the supported affected section,
+   preserve independent later edits, then hand control to the editor.
+3. **Done Editing:** after the editor saves, capture the correction and check
+   that unrelated work survived.
+4. **Review Later:** keep the item unresolved.
+5. **Save & Exit:** preserve Relay progress and close its workspace. This does
+   not save unsaved changes in the video editor.
 
-Recovery capability must be proven through fault and compatibility testing.
-It is not currently a promise that every editing mistake can be undone.
+The V3 queue and controls are experimental. One limited live selective inverse
+has been demonstrated; the full human correction-and-resume loop is not qualified.
+If dependencies or an unsupported edit prevent a safe local restore, Relay must
+show the conflict and defer that correction. A whole-project rollback is a
+different action and must not be substituted silently.
 
-## Proposed interface areas
+## History and recoverability
 
-| Area | Purpose |
+The planned History & Recovery area would distinguish:
+
+| Choice | Intended meaning and current limit |
 | --- | --- |
-| **Project Home** | Open a project, view its supported editor and recovery state. |
-| **Find Edits** | Choose supported detectors or request a plain-language search. |
-| **Guided Session** | Next / Previous, Let Me Edit, Done Editing, approve/correct, skip, pause. |
-| **QC Queue** | Revisit uncertain or completed work and track corrections. |
-| **History & Recovery** | Inspect verified snapshots, restore when safe, manage backups. |
-| **Preferences** | Configure detector thresholds, review gates, and user control settings. |
+| Restore a checkpoint | Return to a verified recorded project state. Bounded known-state recovery exists; general recovery is not guaranteed. |
+| Restore one edit | Preserve independent later work when that inverse and its dependencies are supported. A bounded live case exists; broader restoration remains gated. |
+| Manage backups | Understand retained snapshots and storage use. A complete backup-management interface is planned. |
+| Clean temporary storage | Review explicit optional cleanup of Relay-owned temporary data. Originals and accepted projects are not disposable backups. |
 
-## Performance and learning philosophy
+## Intended application areas
 
-An interactive jump should not require the AI to reason through the entire
-video again. The intended design separates **background analysis**,
-**deterministic indexed navigation**, and **saved-result verification**.
-Seek latency and frame accuracy will be benchmarked on representative
-projects; “instant” remains a goal, not a current measured capability.
+| Area | What the editor would use it for |
+| --- | --- |
+| Project Home | Open a project and see supported capabilities and recovery state. |
+| Find Edits | Search supported detectors and filter candidates. |
+| Guided Session | Navigate, edit, save, capture, pause and continue. |
+| QC Queue | Play context, approve, defer or correct affected edits. |
+| History & Recovery | Inspect checkpoints, dependencies and supported restores. |
+| Preferences | Choose supported thresholds, review gates and control settings. |
 
-Saved human edits can show exactly **what changed**, even when the software
-cannot establish **why**. Optional labels such as “keep speech” or
-“remove bumper” may help describe the preference, but proposed reusable
-rules require independent positive and negative testing.
+These are product design areas, not six completed application screens. The
+current desktop workspace is a development interface, not a public installer.
 
-### Current boundary
+## What learning means
 
-One bounded live manual handoff and native saved-edit comparison have been
-demonstrated. The pilot still requires active development assistance for
-navigation; repeated guided sessions have not been qualified. A finished standalone interface, reliable rapid navigation,
-independently qualified automatic edit proposals, selective restoration,
-and an externally available beta are future work.
+Saved changes show **what changed**. They do not necessarily reveal **why**.
+Optional explanations can distinguish “preserve speech” from a pacing choice.
+Reusable rules need positive, negative and independent examples, plus editorial
+permission for the intended scope. Similarity alone cannot authorize deletion,
+retention or a fade, and a correction does not automatically retrain an AI model.
 
-See [Development status](DEVELOPMENT_STATUS.md) for demonstrated scope and the
-[Roadmap](../ROADMAP.md) for milestone acceptance criteria.
+See [Development status](DEVELOPMENT_STATUS.md), [Roadmap](../ROADMAP.md),
+[Use cases](USE_CASES.md) and [Safety and validation](SAFETY_AND_VALIDATION.md).

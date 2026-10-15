@@ -20,7 +20,26 @@ changes or permitting further automated input. One bounded handoff and pause hav
 been demonstrated; wider reliability remains unqualified. User originals and
 accepted projects must remain distinct from disposable work.
 
-Known-checkpoint recovery is different from selectively undoing an earlier edit
-or accepting an arbitrary partially edited project. Selective restore, a visible
-backup-management interface, and optional cleanup remain planned or exploratory.
+Known-checkpoint recovery differs from selectively undoing an earlier edit or
+accepting an arbitrary partially edited project. One bounded selective inverse
+has now preserved ten later edits and 37 saved fade settings. Only a qualified
+subset is supported; unsupported dependencies remain gated. The complete live
+human correction-and-resume loop, a visible backup-management interface and
+optional cleanup still require development and qualification.
 No general recovery guarantee is made. See [Product experience](PRODUCT_EXPERIENCE.md).
+
+## Proposals, correction and outside content
+
+- Keep experimental proposals isolated and explicitly unapproved. A successful
+  structural verification is not a decision about artistic quality.
+- Preserve a verified restoration checkpoint separately from a human correction
+  working copy. Record observed corrections without inventing their purpose.
+- Do not substitute whole-project rollback for unsupported selective restoration.
+- Report unknown changes and uncertain audio decisions instead of treating
+  absent clips, overlapping audio or matching patterns as approval.
+- Qualify rendered picture/audio QC separately from saved settings.
+
+External testing is not open. Future testing requires explicit rights and
+permissions, private handling, agreed retention/deletion, original preservation
+and a supported-workflow assessment. These are required preparations, not a
+current service guarantee. See [External-testing readiness](EXTERNAL_TESTING.md).

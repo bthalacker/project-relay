@@ -20,9 +20,12 @@ Evaluate previously unseen media separately from material used during developmen
 
 When an outcome differs from the reference, record the high-level failure category and whether the system detected it and stopped safely. Useful categories include semantic detection, edit timing, audio/video correctness, editor execution, result verification, and recovery. A detected mismatch or safe stop should remain visible as a qualification result rather than being counted as a successful edit.
 
-## Repeat from clean baselines
+## Repeat from verified baselines
 
-Restore a clean project state between repeat runs and use the same defined inputs and configuration. Compare results across runs to assess repeatability. Investigate unexpected differences before treating a workflow as qualified.
+Use the same defined inputs and configuration for comparable runs. Start from a
+verified baseline or independently verified recovery state; preserve accepted
+work and distinguish a new test copy from a clean original. Compare outcomes
+across runs and investigate differences before claiming repeatability.
 
 ## Extend qualification across editors
 
@@ -45,3 +48,23 @@ and latency measurements, interrupted saves, unknown external changes, rejected
 proposals, and verified recovery. Report actual live scope separately from unit
 tests and simulations. Saved geometry alone does not establish editorial or
 rendered audiovisual correctness. See [Development status](DEVELOPMENT_STATUS.md).
+
+## Later workspace, batch and restoration campaigns
+
+The October 10 V2 campaign recorded 60/60 focused tests, including synthetic
+session and layout checks; it ran no new live editing cycle. The October 13
+restoration/Batch QC campaign recorded 59 focused tests and a separately bounded
+live inverse preserving ten later edits and 37 saved fade settings. A continuation
+also completed eleven authorized edits followed by one additional reviewed edit.
+These are distinct evidence scopes, not a combined application qualification score.
+
+Selective restoration requires source-coverage, audio ownership, saved-envelope,
+later-work preservation, conflict, interruption and recovery checks. A complete
+old-project rollback does not prove selective restoration. Offline lifecycle
+tests do not qualify the full live human correction-and-resume loop.
+
+Rendered audiovisual checks and editorial approval must be evaluated separately
+from saved-project structure. Experimental proposals remain unapproved after a
+successful save. External workflows require their own support assessment and
+permission/privacy arrangements before media intake; see
+[External-testing readiness](EXTERNAL_TESTING.md).

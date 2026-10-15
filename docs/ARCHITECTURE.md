@@ -36,8 +36,8 @@ The execution layer applies approved plan operations through guarded adapter act
 The intended guided flow separates candidate detection, editor navigation,
 human control, saved-result verification, and approval. One bounded manual
 handoff has been demonstrated: navigate, yield control, accept the user's saved
-edit, record observed differences, and pause. Navigation currently requires
-development assistance; repeated-session reliability remains unqualified.
+edit, record observed differences, and pause. A later desktop workspace adds session/exit controls. Two bounded shared-navigation
+checks passed; repeated-session reliability and general seek latency remain unqualified.
 
 Automatic proposals require separate qualification and human confirmation.
 An original proposal and a later human correction must remain distinct evidence.
@@ -47,6 +47,19 @@ intent, grant future editorial permission, or automatically retrain a model.
 ## Verification, reconciliation, and recovery
 
 After execution, the saved project is checked against expected outcomes. Reconciliation identifies differences, including unexpected changes to unrelated timeline contributions. Mutation journaling supports recovery, and rollback is treated as successful only when its result is verified. These capabilities have been demonstrated for the limited qualified Filmora subset; broader coverage remains in qualification.
+
+## Selective restoration and QC — bounded and experimental
+
+A recorded before/after edit can be reconciled with current source contributions
+to determine whether it can be reversed without losing independent later work.
+One bounded live case preserved ten later edits and 37 saved fade settings.
+Dependencies or unsupported inverses must block restoration; a whole-project
+rollback is a different operation.
+
+The integrated QC prototype shares navigation with guided editing and keeps
+proposals, approvals and captured corrections distinct. The complete human
+correction-and-resume loop and full rendered audiovisual QC remain unqualified.
+This public overview omits private implementation and project evidence.
 
 ## Failure handling
 

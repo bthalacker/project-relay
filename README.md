@@ -1,103 +1,137 @@
-# Project Relay
+# Project Relay — AI-Assisted Video Editing Automation
 
-**Development codename:** Project Relay  
-**Status:** Pre-alpha · active development  
-**Development version concept:** `0.0.1-dev`
+**Less repetitive editing. More control over the result.**
 
-Project Relay is a vendor-neutral video editing automation platform evolving toward **Guided Adaptive Editing**. It aims to find useful edit locations, guide the editor to them, support manual editing or separately qualified proposals, and verify saved results through editor-specific adapters.
+Project Relay aims to help video creators find repetitive editing work, make
+supported changes, and review the results while keeping creative decisions with
+the editor. Its direction is **Guided Adaptive Editing**: assistance that can
+learn from verified examples without treating every similar scene as permission
+to edit.
 
-Project Relay is a development codename, not the final commercial product name or a trademark claim.
+**Pre-alpha · Development codename · No public download or open beta**
+
+Project Relay is a development codename, not the final commercial product name
+or a trademark claim.
 
 ## The problem
 
-Repetitive and precision-sensitive edits can take substantial time and are easy to apply inconsistently. Project Relay aims to reduce the total human time to an accepted edit: finding it, editing, reviewing, correcting, and recovering. The editor keeps creative control; a saved cut does not explain its artistic purpose.
+Recorded classes, tutorials and other long videos can take considerable effort
+to search, trim and check. Locating transitions, removing unwanted material,
+cleaning audio and revisiting earlier edits can consume time before the editor
+is satisfied with the result.
 
-## Intended workflow
+## Our approach
 
-Find → Navigate → Edit manually or review a qualified proposal → Save → Verify → Capture changes → Continue or QC
+**Analyze footage → Find editing opportunities → Navigate → Propose a qualified
+edit or hand over control → Review → Correct or approve → Continue**
 
-This is the intended product flow. **One live manual handoff has been demonstrated**, not the full repeated-session workflow. Automatic editorial proposals are not qualified. The current guided prototype requires active development assistance for navigation; fast standalone seeking is planned.
+This is the intended complete workflow. Individual parts have been demonstrated;
+the entire experience is still under development. Relay's goal is to reduce the
+total effort of reaching an accepted edit, including review and correction.
+
+## What's working today
+
+The private development prototype has demonstrated these limited capabilities:
+
+- **Compare saved edits:** identify removed picture/audio, retained detached
+  audio and saved fade settings without inventing the editor's artistic reason.
+- **Execute previously authorized edits:** bounded Filmora workflows with saved
+  project checks, source-coverage verification and protected earlier history.
+- **Hand control to a human:** one live guided navigation, manual edit, saved
+  change capture and safe pause demonstration.
+- **Use a desktop workspace:** a dark interface with contextual controls,
+  progress, and Save & Exit, window-close and Ctrl+Q handling. Its focused tests
+  cover session behavior; they do not prove repeated live editing reliability.
+- **Restore an earlier isolated edit:** one bounded live restoration preserved
+  ten later edits and 37 saved fade settings. Only a qualified subset is supported;
+  dependent or unsupported changes remain blocked.
+
+Two bounded shared-navigation checks also passed. **Fast navigation across
+representative projects, long-session reliability, full rendered audiovisual QC
+and unattended artistic editing remain unqualified.** A successful save does not
+establish that an edit looks or sounds right.
+
+See [Development status](docs/DEVELOPMENT_STATUS.md) for separately scoped results.
+
+## What we're building
+
+- Guided editing with reliable navigation and clear human handoffs.
+- Searchable editing opportunities, including supported pauses, titles,
+  transitions and repeated material.
+- Proposals informed by user-approved examples and independently tested rules.
+- Safe batches followed by integrated playback, approval and correction in QC.
+- Verified checkpoints, understandable history and backup management.
+- Selective restoration that preserves independent later work when supported.
+
+These are development goals, not a list of available product features. The
+complete live correction-and-resume loop still needs qualification. Experimental
+editorial proposals remain explicitly unapproved until reviewed.
+
+## Potential applications
+
+Relay could eventually assist people creating **educational videos, recorded
+classes, tutorials, webinars, training presentations and other long-form content**.
+For example, an instructor could review suggested pauses or recurring sections
+without repeatedly searching the timeline. Editors would retain control over
+instructional meaning, pacing and what should stay.
+
+These workflows have not been validated with outside educational organizations.
+There are no measured time-saving promises. Read the [potential use cases](docs/USE_CASES.md).
 
 ## High-level architecture
 
 ```text
-Media
-  ↓
-Analysis
-  ↓
-Semantic Edit Plan
-  ↓
-Review / Approval
-  ↓
-Editor Adapter
-  ↓
-Execution
-  ↓
-Validation / Reconciliation
+Media → Analysis → Semantic edit plan → Review / approval
+                                            ↓
+                                      Editor adapter
+                                            ↓
+                                        Execution
+                                            ↓
+                               Validation / reconciliation
 ```
 
-The analysis system is intended to produce an editor-neutral edit plan. Adapters translate that plan for supported editors, keeping core analysis independent from any one editor. Validation and reconciliation check whether the resulting project matches the plan and surface unexpected conditions.
+The design keeps analysis and edit intent independent of a particular editor.
+Adapters translate supported operations and verify results for each editor.
+Filmora 14 is the initial development target; additional adapters must earn
+their own qualification. See [Architecture](docs/ARCHITECTURE.md) and
+[Editor adapters](docs/EDITOR_ADAPTERS.md).
 
-## Current development
+## Development status and roadmap
 
-**Pre-alpha. One bounded guided manual-editing pilot has been demonstrated.**
-Relay navigated to a candidate, fully handed control to the editor, captured the
-saved manual change, recorded observed differences without inventing artistic
-intent, and paused safely. The accompanying validation recorded **27/27 focused
-tests passing**. Automatic proposal lifecycle checks used a simulated executor;
-no live automatic editorial proposal was qualified.
+Project Relay remains **pre-alpha**, with a development version concept of
+`0.0.1-dev`. It is not a production-ready application or a general-purpose public
+download. Integrated QC is a requirement for the eventual **0.1 experience**,
+not a completed feature or an announced release.
 
-An earlier blind saved-project comparison identified **eight picture-removal
-spans, eight audio-removal spans, four retained detached-audio clips, and three
-positive saved fade-outs**. These are observations of saved settings, not proof
-of rendered sound quality or the reason for each edit.
+The visual [milestone roadmap](ROADMAP.md) describes demonstrated, experimental,
+blocked and planned work without speculative completion dates. See also the
+[intended product experience](docs/PRODUCT_EXPERIENCE.md) and [Changelog](CHANGELOG.md).
 
-The earlier limited deterministic Filmora workflow remains a separate bounded
-qualification result, covering approved planning, guarded execution, saved-state
-verification, and verified rollback. It does not establish general autonomous
-editing competence or qualify the guided automatic-proposal path. Filmora 14 is
-the initial guided development target; future adapters remain planned.
+## Future collaboration
 
-Repeated guided-session reliability, rapid standalone navigation, prospective
-editorial decisions, and unattended completion remain unqualified. Project Relay
-is not production-ready and no public beta is available. See
-[Development status](docs/DEVELOPMENT_STATUS.md) for the scope of each result.
+Relay may eventually benefit from feedback from creators, instructors and
+organizations with different editing workflows. **External testing is not open.**
+No partnership, pilot commitment or endorsement is being announced.
 
-## Design principles
-
-- Keep the core analysis and edit plan independent of a specific editor.
-- Give users a chance to review proposed changes before execution.
-- Use evidence to support planning and guarded execution.
-- Verify editor state and expected results, including safe recovery.
-- Preserve source media and stop safely when conditions are unexpected.
-- Expand editor support only as adapters can be qualified.
-
-## Roadmap
-
-The next milestone is repeated, reliable guided editing with accurate navigation
-and safe handoffs. Further goals include a fast local candidate index, searchable
-detection, reviewed adaptive proposals, integrated QC, verified backups, selective
-restoration, and beta testing. Filmora, DaVinci Resolve, and Adobe Premiere Pro
-remain an intended longer-term adapter direction, not a support or release promise.
-
-See the visual [Roadmap](ROADMAP.md), the [Product experience concept](docs/PRODUCT_EXPERIENCE.md),
-and the [Changelog](CHANGELOG.md). Milestones will be updated as evidence changes;
-there are no speculative completion dates.
+Before accepting outside media, Relay needs a defined supported workflow,
+permission and privacy arrangements, isolated testing, verified recovery and
+a feedback process. The [external-testing readiness plan](docs/EXTERNAL_TESTING.md)
+explains these prerequisites. Please do not upload private footage or project
+files to public issues.
 
 ## Project documentation
 
-- [Architecture](docs/ARCHITECTURE.md)
 - [Development status](docs/DEVELOPMENT_STATUS.md)
-- [Product experience concept](docs/PRODUCT_EXPERIENCE.md)
-- [Editor adapters](docs/EDITOR_ADAPTERS.md)
+- [Product experience](docs/PRODUCT_EXPERIENCE.md)
+- [Potential use cases](docs/USE_CASES.md)
+- [Architecture](docs/ARCHITECTURE.md)
 - [Qualification strategy](docs/QUALIFICATION_STRATEGY.md)
 - [Safety and validation](docs/SAFETY_AND_VALIDATION.md)
+- [Future external testing](docs/EXTERNAL_TESTING.md)
 - [Security](SECURITY.md)
-
-## Availability
-
-Project Relay is in pre-alpha development. It is not currently presented as a production-ready product or public download.
 
 ## Trademarks
 
-Filmora, DaVinci Resolve, and Adobe Premiere Pro are trademarks of their respective owners. Project Relay is not affiliated with or endorsed by their respective owners.
+Filmora, DaVinci Resolve, and Adobe Premiere Pro are trademarks of their
+respective owners. Project Relay is not affiliated with or endorsed by their
+respective owners.
