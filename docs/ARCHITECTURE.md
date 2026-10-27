@@ -56,9 +56,11 @@ One bounded live case preserved ten later edits and 37 saved fade settings.
 Dependencies or unsupported inverses must block restoration; a whole-project
 rollback is a different operation.
 
-The integrated QC prototype shares navigation with guided editing and keeps
-proposals, approvals and captured corrections distinct. The complete human
-correction-and-resume loop and full rendered audiovisual QC remain unqualified.
+The integrated QC prototype is preview-first: source previews and scoped
+approval/advancement do not require desktop navigation. Optional inspection and
+manual correction use a separate freshly verified native route. A bounded
+supervised batch recorded approvals and a saved human correction; broader
+restoration/correction loops and full rendered audiovisual QC remain unqualified.
 This public overview omits private implementation and project evidence.
 
 ## Failure handling
@@ -68,3 +70,20 @@ Unexpected conditions should be surfaced, and execution should stop safely when 
 ## Future directions
 
 The adapter boundary is intended to support future editor integrations. A native media-processing backend is also a possible future direction. Neither additional integrations nor a native backend are represented as current capabilities.
+
+## Planned reviewable-plan architecture
+
+The complete direction is Analyze → Build Proposed Edit Plan → Preview →
+Review/Correct → Execute → Verify → Export. Its purpose is to check dependencies
+and revise proposed edits before mutation, then execute only qualified and
+authorized operations. This complete architecture is planned.
+
+Current development distinguishes source-derived preview composition, saved
+project verification and native rendered verification. An isolated native export
+disagreed with decoded-clean saved geometry, so no preview certificate or
+structural check can be treated as proof of final native output.
+
+Review First, Automate Then Review and optional Full Automation are intended
+operating modes with different qualification needs. Reusable encoding profiles,
+additional adapters and a native backend remain future work. See the
+[roadmap](../ROADMAP.md) and [current status](DEVELOPMENT_STATUS.md).

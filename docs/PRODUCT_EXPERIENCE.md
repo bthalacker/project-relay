@@ -21,6 +21,33 @@ Detection is not permission to remove content.
 **This educational workflow has not been validated as a complete experience.**
 There is no production-use or time-saving claim for a two-hour training recording.
 
+## Current preview-first development workspace
+
+For supported cases, the working development flow is:
+
+**Preview → Looks Good → Next Preview**
+
+Before/After picture and separately identified outgoing, incoming and retained
+audio play inside Relay. History search revisits an edit without automatically
+moving Filmora. Selecting another case or treatment loads without autoplay; an
+explicit Play starts playback.
+
+Supported treatment simulations offer unchanged audio, tail deletion, outgoing
+fade, incoming fade and combined fades with relative presets. Approve Audio
+Preview records only that exact simulation choice. Native Apply remains disabled.
+A saved-state reconstruction, original excerpt and unexecuted proposal must be
+labelled differently; none is silently called a native export.
+
+**Inspect in Filmora** is optional. **Let Me Edit** requires fresh verified native
+navigation and a safe handoff; after saving, **Done Editing** or **Capture Saved
+Changes** records the saved difference without inventing its artistic reason.
+Inspecting alone is not an approval, and Back to Previews does not undo the editor.
+
+A bounded supervised three-case batch and isolated real-widget tests support
+these claims. Wider reliability, unsupported restorations and final rendered QC
+remain open. Current native navigation can take 77–107 seconds in difficult
+cases; users should not mistake a slow pending seek for completion.
+
 ## Find, go, choose
 
 Planned searches could include:
@@ -57,11 +84,24 @@ and separately identifiable audio context to make an editing decision:
 5. **Save & Exit:** preserve Relay progress and close its workspace. This does
    not save unsaved changes in the video editor.
 
-The V3 queue and controls are experimental. One limited live selective inverse
-has been demonstrated; the full human correction-and-resume loop is not qualified.
+A preview-first queue and scoped approval/capture now function in development.
+One bounded supervised batch captured a correction; one earlier limited live
+selective inverse was demonstrated separately. This does not qualify the complete
+correction/restoration loop for every edit shape.
 If dependencies or an unsupported edit prevent a safe local restore, Relay must
 show the conflict and defer that correction. A whole-project rollback is a
 different action and must not be substituted silently.
+
+## Planned complete-plan experience
+
+The longer-term architecture is **Analyze → Build Proposed Edit Plan → Preview
+→ Review/Correct → Execute → Verify → Export**. Reviewing the entire proposal
+before mutation would allow dependency checks and revisions to earlier choices.
+This full workflow is planned, not delivered.
+
+Intended modes are Review First, Automate Then Review for qualified authorized
+operations on a protected copy, and optional Full Automation. Full Automation,
+saved output preferences and configurable encoding remain planned and unqualified.
 
 ## History and recoverability
 

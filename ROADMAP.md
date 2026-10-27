@@ -1,6 +1,6 @@
 # Project Relay — Product and Engineering Roadmap
 
-**Pre-alpha · Development codename · Updated October 15, 2026**
+**Pre-alpha · Development codename · Updated October 27, 2026**
 
 **Vision:** Reduce repetitive video-editing work while keeping the editor in
 control of meaning, pacing and the final result.
@@ -14,7 +14,7 @@ Workstreams overlap. A bounded demonstration does not complete a whole phase.
 flowchart TD
     A["1. Foundation — bounded demonstrations"] --> B["2. Guided Editing — partially demonstrated"]
     B --> C["3. Adaptive Automation — experimental"]
-    C --> D["4. Integrated QC — experimental"]
+    C --> D["4. Integrated QC — preview-first prototype"]
     D --> E["5. Selective Restoration — bounded live demonstration"]
     E --> F["6. Product Reliability — qualification in progress"]
     F --> G["7. External Beta — planned, not open"]
@@ -24,34 +24,46 @@ flowchart TD
 | Phase | Current position | Evidence required to advance |
 | --- | --- | --- |
 | **1. Foundation** | **Demonstrated in bounded workflows.** Media analysis, native project inspection, source mapping and saved-change comparison support current experiments. | Broader supported media/project structures, independently checked boundaries and source coverage, with explicit handling of unsupported cases. |
-| **2. Guided Editing** | **Partially demonstrated.** One live manual handoff/capture, a V2 desktop workspace and focused session tests. Two later shared-navigation checks passed. | Repeated live navigate → handoff → save → capture cycles; reliable pause/resume, exact current-state navigation and measured latency across representative projects. |
+| **2. Guided Editing** | **Partially demonstrated.** Initial live handoff/capture, a desktop workspace, a later bounded supervised review/correction batch, and shared-navigation checks. | Repeated live navigate → handoff → save → capture cycles; reliable pause/resume, exact current-state navigation and measured latency across representative projects. |
 | **3. Adaptive Automation** | **Experimental, with bounded authorized execution demonstrated.** Eleven automatic edits and one later reviewed edit completed in separate verified continuation work. | Tested rules derived from approved examples, positive/negative and held-out cases, explicit editorial authority, and no duplicate changes. General audio/artistic choices remain blocked. |
-| **4. Integrated Quality Control** | **Experimental.** Prioritized context/review queue and isolated unapproved proposals prepared. | Consecutive live playback, approve/defer/correct/save/resume cycles; unrelated work preserved; rendered picture and audio checked. This is required for the eventual 0.1 experience. |
+| **4. Integrated Quality Control** | **Working development prototype; broader qualification open.** Embedded preview-first playback, searchable history, scoped approvals, audio simulations, a bounded supervised batch and 17 isolated real-widget case workflows. | Broader repeated review/correction cycles, native-render equivalence, supported restoration paths and preservation under interruption. Preview approval alone does not qualify output. Required for the eventual 0.1 experience. |
 | **5. Selective Restoration** | **Bounded live demonstration.** An earlier isolated edit was restored while ten later edits and 37 saved fade settings remained intact. | Complete human correction-and-resume qualification, more supported edit types, dependency/conflict handling and preservation of later work. Several inverse scenarios remain gated. |
-| **6. Product Reliability** | **Limited checkpoint/recovery foundations demonstrated; product work remains.** | Performance, verified backups, crash/interrupted-save tests, understandable history, installation, accessibility and usability testing. No guaranteed recovery claim. |
+| **6. Product Reliability** | **QA harness and bounded recovery foundations demonstrated; product work remains.** October 27: 94-record audit, 263 local regression tests, 82 separate smoke tests and six bounded native checks; open render/performance defects retained. | Performance, verified backups, crash/interrupted-save tests, understandable history, installation, accessibility and usability testing. No guaranteed recovery claim. |
 | **7. External Beta** | **Planned; not open.** No external media intake or production pilot is authorized. | Supported-workflow assessment, permission/privacy/retention process, isolated tests, qualified recovery, actionable failure reports and a useful measured workflow. |
 | **8. Future Integrations** | **Planned or exploratory.** Filmora is the initial adapter target. | Separate implementation and qualification for additional editors; feasibility work for possible native processing capabilities. |
 
-## The intended editing and QC flow
+## Planned non-destructive editing architecture
 
 ```mermaid
-flowchart TD
-    A["Find a candidate"] --> B["Navigate and verify the location"]
-    B --> C{"Qualified action and editorial permission?"}
-    C -- "Yes" --> D["Propose or execute within approved scope"]
-    C -- "No" --> E["Human edits or defers"]
-    D --> F["Review picture and audio context"]
-    E --> G["Verify the saved result"]
-    F --> H{"Accept, defer or correct?"}
-    H -- "Accept" --> G
-    H -- "Defer" --> I["Keep the issue unresolved"]
-    H -- "Correct" --> J["Restore only if supported and safe"]
-    J --> E
-    G --> K["Record observed changes and checkpoint"]
+flowchart LR
+    A["Analyze"] --> B["Build Proposed Edit Plan"]
+    B --> C["Preview"]
+    C --> D["Review or Correct"]
+    D --> E["Execute Authorized Operations"]
+    E --> F["Verify Saved and Rendered Results"]
+    F --> G["Export"]
 ```
 
-*Concept diagram: the full loop is not yet qualified. An unsupported restoration
-must remain blocked; it cannot silently become a whole-project rollback.*
+**Planned complete architecture, not a completed end-to-end workflow.** Preparing
+a plan before mutation would let the user inspect the whole plan, revise earlier
+proposals, check dependencies, execute approved operations in a controlled
+sequence and verify saved results afterward. Automation can then expand only as
+each operation earns evidence and authorization. Unsupported restoration or
+verification must stay gated.
+
+### Intended operating modes
+
+| Mode | Intended behavior | Current qualification |
+| --- | --- | --- |
+| Review First | Analyze, prepare proposals, preview, adjust and approve the plan before execution. | Source-preview review exists in bounded workflows; complete editable-plan execution is planned. |
+| Automate Then Review | Execute independently qualified, authorized edits on a protected copy, then review results. | Bounded execution and QC demonstrations exist; the general complete mode remains unqualified. |
+| Full Automation | Optional analysis through editing, verification, rendering and encoding using saved preferences. | Planned and unqualified; no unattended artistic-editing claim. |
+
+### Planned encoding profiles
+
+Reusable codec, resolution, quality, audio configuration, subtitle handling and
+export-destination preferences are future work. A bounded diagnostic native export
+does not establish configurable automated rendering or encoding.
 
 ## Evidence behind the current positions
 
@@ -67,6 +79,15 @@ must remain blocked; it cannot silently become a whole-project rollback.*
   saved source coverage were checked; the entire video project was not completed.
 - **October 13:** selective-restoration and Batch QC V3 work recorded **59**
   focused tests passing and the bounded live restoration described above.
+
+- **October 25–27:** bounded supervised QC, embedded preview-first review, audio
+  simulations, searchable history and source-preview reconstruction advanced.
+  The latest audit supports 59 of 94 records and gates 35. The October 27 campaign
+  exercised 17 GUI case workflows, eight cross-case flow types, 263 local regression
+  tests, 82 separate smoke tests and six bounded native checks; 65 protected hashes
+  matched. See the [scoped milestone report](docs/QA_MILESTONE_2026-10-27.md).
+- **Open:** a native rendered-frame discrepancy, 77–107-second difficult navigation
+  checks, missing reconstruction evidence and general final-output qualification.
 
 These counts belong to different scopes and are not added into a combined
 qualification score. Automated checks do not establish artistic quality.

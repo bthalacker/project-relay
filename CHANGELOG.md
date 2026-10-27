@@ -4,6 +4,41 @@ This file summarizes broad development work. It does not claim that planned work
 
 ## 0.0.1-dev
 
+### 2026-10-27 — Preview-first QC and autonomous engineering QA
+
+- Audited **94** historical records: **59** reconstructable from supported evidence,
+  **35** gated. These are records, not completed or approved edits.
+- Exercised **17** genuine visible GUI case workflows and **eight** cross-case
+  workflow types using an isolated real-widget harness and muted embedded playback.
+- Recorded **263** local QC regression tests and **82** separate launcher smoke
+  tests passing. These overlap; no combined reliability score is claimed.
+- Performed **six** bounded native checks, including one tiny diagnostic export.
+  Its decoded pictures exposed an unresolved saved-geometry/native-render
+  discrepancy. No accepted corrective edit was applied.
+- Verified **65** protected file hashes; existing human decisions and protected
+  editing histories remained unchanged. Restored the accepted editor project clean.
+- Fixed history reselection undoing Next, stale asynchronous eligibility, cached
+  treatment binding, global single-instance coverage and review-scope labels.
+- Recovered additional incoming-title evidence for a proposed preview; native
+  execution remained pending. Difficult navigation took about **77–107 seconds**.
+- Updated the planned reviewable-edit-plan architecture, operating modes and future
+  encoding profiles. No public release, beta or general recovery claim.
+
+### 2026-10-25–26 — Supervised QC and embedded source previews
+
+- A bounded supervised three-case batch recorded two approved results and one
+  captured manual correction, without treating those choices as future permission.
+- Developed embedded Before/After and separate audio playback, preview-first
+  approval/advancement, searchable history, independent scrolling and saved drafts.
+- Added supported preview-only Keep/Delete/outgoing/incoming fade simulations,
+  source-bound incoming-title corrections, no-tail eligibility and clearer review
+  scopes. Native Apply remains disabled.
+- Added bounded session-save sharing-conflict retries and stale/external-state
+  invalidation. Earlier single-seek checks passed, but later difficult cases
+  demonstrate that low-latency navigation is not qualified.
+- Source-derived preview correctness is distinct from native rendered output.
+  [Latest scoped report](docs/QA_MILESTONE_2026-10-27.md).
+
 ### 2026-10-15 — Public documentation and future collaboration readiness
 
 - Clarified demonstrated, experimental, blocked and planned capabilities across

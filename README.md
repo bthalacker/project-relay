@@ -1,6 +1,6 @@
 # Project Relay — AI-Assisted Video Editing Automation
 
-**Less repetitive editing. More control over the result.**
+**Less repetitive video editing, more control over the finished result.**
 
 Project Relay aims to help video creators find repetitive editing work, make
 supported changes, and review the results while keeping creative decisions with
@@ -20,52 +20,90 @@ to search, trim and check. Locating transitions, removing unwanted material,
 cleaning audio and revisiting earlier edits can consume time before the editor
 is satisfied with the result.
 
-## Our approach
+## Guided Adaptive Editing
 
-**Analyze footage → Find editing opportunities → Navigate → Propose a qualified
-edit or hand over control → Review → Correct or approve → Continue**
+Relay's direction is to analyze footage, identify editing opportunities, and
+either propose an independently qualified change or hand control to the editor.
+Observed saved edits describe what changed; they do not automatically reveal
+artistic intent or authorize another similar edit.
 
-This is the intended complete workflow. Individual parts have been demonstrated;
-the entire experience is still under development. Relay's goal is to reduce the
-total effort of reaching an accepted edit, including review and correction.
+The planned complete architecture is:
 
-## What's working today
+**Analyze → Build Proposed Edit Plan → Preview → Review/Correct → Execute → Verify → Export**
 
-The private development prototype has demonstrated these limited capabilities:
+Parts exist in bounded development workflows. The complete reviewable-plan,
+execution and export experience is **planned, not qualified end to end**.
 
-- **Compare saved edits:** identify removed picture/audio, retained detached
-  audio and saved fade settings without inventing the editor's artistic reason.
-- **Execute previously authorized edits:** bounded Filmora workflows with saved
-  project checks, source-coverage verification and protected earlier history.
-- **Hand control to a human:** one live guided navigation, manual edit, saved
-  change capture and safe pause demonstration.
-- **Use a desktop workspace:** a dark interface with contextual controls,
-  progress, and Save & Exit, window-close and Ctrl+Q handling. Its focused tests
-  cover session behavior; they do not prove repeated live editing reliability.
-- **Restore an earlier isolated edit:** one bounded live restoration preserved
-  ten later edits and 37 saved fade settings. Only a qualified subset is supported;
-  dependent or unsupported changes remain blocked.
+## Preview-first quality control
 
-Two bounded shared-navigation checks also passed. **Fast navigation across
-representative projects, long-session reliability, full rendered audiovisual QC
-and unattended artistic editing remain unqualified.** A successful save does not
-establish that an edit looks or sounds right.
+The development workspace now supports embedded video/audio playback,
+Before/After source previews, separately identified outgoing/incoming audio,
+searchable editing history, revisiting reviews, explicit approval/correction
+states, and saved-session resume.
 
-See [Development status](docs/DEVELOPMENT_STATUS.md) for separately scoped results.
+The everyday direction is **Preview → Looks Good → Next Preview**. Advancing a
+source preview does not require Filmora navigation. Optional **Inspect in
+Filmora** requests a fresh verified landing; correction workflows use saved-edit
+capture and retain their separate safety gates.
 
-## What we're building
+A bounded supervised three-case batch recorded two accepted results and one
+captured human correction. Automated testing also exercised the genuine visible
+interface across 17 case workflows. Neither result qualifies every project,
+all restoration paths or long unattended sessions.
 
-- Guided editing with reliable navigation and clear human handoffs.
-- Searchable editing opportunities, including supported pauses, titles,
-  transitions and repeated material.
-- Proposals informed by user-approved examples and independently tested rules.
-- Safe batches followed by integrated playback, approval and correction in QC.
-- Verified checkpoints, understandable history and backup management.
-- Selective restoration that preserves independent later work when supported.
+### Audio preview and fades
 
-These are development goals, not a list of available product features. The
-complete live correction-and-resume loop still needs qualification. Experimental
-editorial proposals remain explicitly unapproved until reviewed.
+Supported source previews offer Keep, Delete Tail, outgoing fade, incoming fade
+and combined fade simulations, with relative fade presets. Separate stems make
+audio ownership explicit. Unsupported source mappings and saved envelopes remain
+gated, and no-tail cases do not offer redundant choices.
+
+**Approving an audio preview records only that specific simulation decision.
+It does not apply the treatment in Filmora or certify final rendered output.**
+Native audio Apply remains disabled in the current QC workspace.
+
+## October 27 engineering QA milestone
+
+| Check | Recorded scope |
+| --- | --- |
+| Historical records audited | 94; 59 reconstructable, 35 evidence-gated |
+| Genuine GUI testing | 17 case workflows and eight cross-case workflow types |
+| Local QC regression suite | 263 tests passed |
+| Launcher smoke suite | 82 tests passed, reported separately |
+| Native editor checks | Six bounded checks, including one tiny diagnostic export |
+| Preservation | 65 protected file hashes matched; existing decisions and editing histories preserved |
+
+Reconstructable does not mean executed or approved. Test suites overlap and are
+not added into an overall reliability score. See the
+[public milestone report](docs/QA_MILESTONE_2026-10-27.md) for methods and limits.
+
+Recent fixes address history selection undoing Next, stale preview controls,
+cached treatment binding, single-instance handling, session-save retries and
+source-bound incoming-title evidence. Older bounded workflows also demonstrated
+saved-change comparison, authorized execution and selective restoration.
+[Development status](docs/DEVELOPMENT_STATUS.md) separates those scopes.
+
+## Editing safety and current limits
+
+Relay emphasizes preserved originals and accepted work, saved-project checks,
+recorded operation history, verified supported recovery, and explicit stops
+when evidence is missing. These are bounded results, not a general recovery
+guarantee.
+
+- **Native render discrepancy remains open:** an isolated export retained a
+  graphic frame even though decoded source evidence and saved geometry indicated
+  a clean start. No accepted correction was applied.
+- **Navigation is not fast-qualified:** earlier bounded single-seek checks
+  passed, but latest difficult checks took about 77–107 seconds and needed
+  multiple bounded seek candidates.
+- **35 historical records remain gated** on missing qualified reconstruction
+  evidence.
+- Unattended artistic editing, arbitrary project support, broad final rendered
+  audiovisual QC and universal restoration remain unqualified.
+
+The vendor-neutral vision, verified backups, selective correction, adaptive
+proposals, and future editor adapters remain active product goals. No public
+download, open beta or availability date is announced.
 
 ## Potential applications
 
@@ -100,8 +138,9 @@ their own qualification. See [Architecture](docs/ARCHITECTURE.md) and
 
 Project Relay remains **pre-alpha**, with a development version concept of
 `0.0.1-dev`. It is not a production-ready application or a general-purpose public
-download. Integrated QC is a requirement for the eventual **0.1 experience**,
-not a completed feature or an announced release.
+download. A preview-first QC prototype now functions in bounded development workflows;
+product-wide QC qualification remains a requirement for the eventual **0.1
+experience**, not an announced release.
 
 The visual [milestone roadmap](ROADMAP.md) describes demonstrated, experimental,
 blocked and planned work without speculative completion dates. See also the

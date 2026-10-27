@@ -43,3 +43,23 @@ External testing is not open. Future testing requires explicit rights and
 permissions, private handling, agreed retention/deletion, original preservation
 and a supported-workflow assessment. These are required preparations, not a
 current service guarantee. See [External-testing readiness](EXTERNAL_TESTING.md).
+
+## Preview approval and current evidence limits
+
+Source-derived previews identify their sources, scope and whether they reconstruct
+saved geometry or propose an unexecuted change. Explicit approval applies only
+to that reviewed scope, does not grant future similar-edit authority, does not
+apply a native treatment and does not certify final rendered audiovisual QC.
+Native audio Apply is currently disabled.
+
+The October 27 campaign preserved 65 protected file hashes and prior decisions.
+It also reproduced a native exported-frame discrepancy despite decoded-clean
+source geometry. No correction was promoted to accepted work. Missing evidence
+still gates 35 historical reconstructions. These are reasons to retain strict
+source, saved-state and rendered checks, not to weaken them.
+
+A changed saved project must invalidate stale geometry/approval bindings.
+Read-only browsing can remain available while fresh reconciliation gates native
+actions. Existing save retries, single-instance controls and bounded recovery
+tests reduce specific risks; arbitrary external changes and universal recovery
+remain unqualified. See the [scoped milestone](QA_MILESTONE_2026-10-27.md).

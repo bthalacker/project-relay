@@ -68,3 +68,40 @@ from saved-project structure. Experimental proposals remain unapproved after a
 successful save. External workflows require their own support assessment and
 permission/privacy arrangements before media intake; see
 [External-testing readiness](EXTERNAL_TESTING.md).
+
+## October 27: layered engineering QA
+
+The latest campaign combines an offline 94-record audit, 17 genuine visible
+case workflows, eight cross-case flow types, 263 local regression tests, 82
+separate smoke tests and six bounded native checks. See the
+[public milestone report](QA_MILESTONE_2026-10-27.md). Existing results were
+inspected rather than rerun for publication.
+
+Use complementary evidence layers:
+
+1. Unit/regression tests for exact contracts and negative cases.
+2. Saved-project checks for source coverage, ownership and unrelated work.
+3. Independently decoded source frames and audio samples for preview composition.
+4. Real interface tests for actual controls, playback and state transitions.
+5. Bounded native editor checks on disposable projects.
+6. Isolated native exports decoded independently to test rendered behavior.
+7. Human review for artistic choices and audiovisual acceptance.
+
+These layers are not interchangeable. The small native export exposed an unwanted
+graphic despite decoded-clean saved geometry; this remains a failure requiring
+investigation, not a successful edit qualification. Preserve such negative
+evidence and do not change expected values merely to obtain PASS.
+
+## Planned independent black-box testing
+
+Ongoing engineering combines regression checks with autonomous exploratory QA.
+For significant milestones, a separate testing assignment should approach Relay
+as a first-time user without implementation knowledge, explore workflows and
+produce an independent defect report before engineering investigates fixes.
+The current engineering-authored harness is not independent external testing.
+External beta testing has not occurred and is not open.
+
+Future campaigns should expand interruptions, unknown external saves, rejected
+proposals, supported restoration and recovery, representative project structures
+and native-rendered audio/video checks. Record distinct workflow coverage and
+actual latency; assertion totals alone cannot establish usability or quality.
