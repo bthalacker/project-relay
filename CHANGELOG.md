@@ -4,6 +4,28 @@ This file summarizes broad development work. It does not claim that planned work
 
 ## 0.0.1-dev
 
+### 2026-11-13 — Human-approved composition reproduction
+
+- Reproduced two case-specific unwanted-frame corrections; saved structure and
+  native picture/audio were checked for one, with focused native picture checks
+  for the other.
+- Reproduced an approved detached audio-tail removal while preserving surviving
+  contributions; a focused native output window was checked.
+- Reproduced an approved complex transition and title removal with overlapping
+  audio, separate fades and downstream movement. All 127 checked saved timeline
+  contributions matched; focused native picture examples matched.
+- Kept decoded source evidence, saved structure, native output and human
+  approval distinct. Reduced-resolution picture checks and aligned audio
+  correlations do not establish exact PCM equivalence for the full composition.
+- Documented a three-level review-priority design; a finished public interface
+  or bulk-approval feature has not been released.
+- Recorded 117 focused regression tests passing and 14 protected hashes
+  matching; human references and QC decisions were preserved. No full-project
+  batch rerun or production promotion occurred.
+- General boundary discovery, unfamiliar material, artistic audio decisions,
+  native output quality and repeatable end-to-end automation remain unqualified.
+  See the [November milestone](docs/QA_MILESTONE_2026-11-13.md).
+
 ### 2026-10-27 — Preview-first QC and autonomous engineering QA
 
 - Audited **94** historical records: **59** reconstructable from supported evidence,

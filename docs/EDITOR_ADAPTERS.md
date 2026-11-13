@@ -18,7 +18,10 @@ checks passed; later difficult navigation took 77–107 seconds and required
 multiple bounded candidates. Low-latency navigation remains unqualified.
 
 Supported source audio simulations do not imply native audio Apply support.
-One tiny native export exposed a saved-geometry/render discrepancy; the cause
-and corrective mapping remain open. Adapter qualification must therefore include
-rendered evidence as well as saved structure. See the
+An earlier tiny native export exposed a saved-geometry/render discrepancy.
+Case-specific frame corrections have since been verified, and approved audio and
+complex transition operations reproduced with saved-state and focused native
+checks. General decoder or sampling behavior remains unresolved. Adapter
+qualification includes rendered evidence as well as saved structure. See the
+[November 13 milestone](QA_MILESTONE_2026-11-13.md) and the historical
 [October 27 milestone](QA_MILESTONE_2026-10-27.md).

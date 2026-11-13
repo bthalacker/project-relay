@@ -25,7 +25,7 @@ Acoustic observations and editorial ownership answer different questions. Eviden
 
 An adapter translates the shared edit plan into operations for a particular editor and reports relevant state. This boundary allows the core analysis system to remain vendor-neutral while editor-specific behavior is developed and qualified separately.
 
-Filmora is the first adapter. A limited deterministic workflow has completed live qualification in pre-alpha; broader operation coverage and qualification remain in progress. DaVinci Resolve and Adobe Premiere Pro adapters are planned for future development only. Additional adapters may be considered as the architecture and qualification work mature.
+Filmora is the first adapter. Limited deterministic workflows have completed live qualification in pre-alpha. Development also reproduced certain approved picture and audio operations, including a complex transition, with saved-project and focused native-output verification. Broader operation coverage and qualification remain in progress. DaVinci Resolve and Adobe Premiere Pro adapters are planned for future development only. Additional adapters may be considered as the architecture and qualification work mature.
 
 ## Evidence-bound execution
 
@@ -79,9 +79,7 @@ and revise proposed edits before mutation, then execute only qualified and
 authorized operations. This complete architecture is planned.
 
 Current development distinguishes source-derived preview composition, saved
-project verification and native rendered verification. An isolated native export
-disagreed with decoded-clean saved geometry, so no preview certificate or
-structural check can be treated as proof of final native output.
+project verification and native rendered verification. An earlier native export disagreed with decoded-clean saved geometry. Later case-specific frame corrections were verified, while general decoder or sampling behavior remains unresolved. Neither preview nor structural checks alone prove final native output. See the [November milestone](QA_MILESTONE_2026-11-13.md).
 
 Review First, Automate Then Review and optional Full Automation are intended
 operating modes with different qualification needs. Reusable encoding profiles,

@@ -1,12 +1,36 @@
 # Development Status
 
-**Updated October 27, 2026 · Pre-alpha · No public download, open beta or production release**
+**Updated November 13, 2026 · Pre-alpha · No public download, open beta or production release**
 
 Project Relay is a development codename. The entries below describe different
 bounded demonstrations. Passing focused tests or saving a project does not
 qualify the whole application, artistic judgment or all operations in an editor.
 
-## Current integrated QC position
+## November 13 engineering evidence
+
+The [November milestone](QA_MILESTONE_2026-11-13.md) extends the historical
+October 27 campaign with case-specific frame corrections, an approved audio-tail
+removal and reproduction of a complex approved transition and title removal.
+All 127 checked saved contributions matched, including intervals, tracks,
+streams, links and fades. Focused native picture examples matched; audio
+correlations supported similarity in aligned windows, without establishing
+sample-exact audio equivalence for the complete composition. Picture checks for
+the complex transition used reduced resolution.
+
+The focused November regression recorded 117 passing tests and 14 protected
+hashes matching, with human references and QC decisions preserved. These counts
+are separate from the October campaign. No full-project batch rerun or
+production promotion occurred. A three-level review-priority design is in
+development, not a released public interface or bulk-approval feature.
+
+Open work includes automatic identification of complete story boundaries,
+generalization to unfamiliar video, incomplete joins, unresolved title and recap
+removals, unqualified artistic audio choices, partially reliable GUI and dialog
+recovery, broader final-output audiovisual qualification and repeatable end-to-end
+autonomous operation. A recent private evaluation still had 84 pending QC rows
+and no approvals; it does not establish editorial success.
+
+## October 27 integrated QC position
 
 | Evidence class | What is established | Limit |
 | --- | --- | --- |
@@ -33,14 +57,13 @@ qualify the whole application, artistic judgment or all operations in an editor.
 - Redundant timestamp reentry removed in an earlier adapter change; later difficult
   cases still required multiple bounded seek candidates. No broad latency fix.
 
-### Explicit remaining blockers
+### October 27 findings and remaining blockers
 
-One transition remains an original unedited join despite its newly recovered
-title-exit proof enabling a proposed preview. A separate boundary's saved geometry
-selects clean source content, yet a tiny native export starts with an unwanted
-graphic frame. The native clock/decoder cause and corrective operation are not
-qualified; no accepted correction was applied. This illustrates why structural
-PASS cannot establish final-output correctness.
+At the October 27 checkpoint, one transition remained an unedited join and a
+separate tiny native export exposed an unwanted graphic frame despite clean
+saved geometry. Subsequent case-specific corrections are described in the
+November milestone; general decoder or sampling behavior remains unresolved.
+Structural checks alone cannot establish final-output correctness.
 
 35 records still need qualified opening evidence. Native audio Apply remains
 disabled. Difficult navigation measured approximately 77–107 seconds. General

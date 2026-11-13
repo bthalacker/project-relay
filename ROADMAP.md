@@ -1,6 +1,6 @@
 # Project Relay — Product and Engineering Roadmap
 
-**Pre-alpha · Development codename · Updated October 27, 2026**
+**Pre-alpha · Development codename · Updated November 13, 2026**
 
 **Vision:** Reduce repetitive video-editing work while keeping the editor in
 control of meaning, pacing and the final result.
@@ -24,11 +24,11 @@ flowchart TD
 | Phase | Current position | Evidence required to advance |
 | --- | --- | --- |
 | **1. Foundation** | **Demonstrated in bounded workflows.** Media analysis, native project inspection, source mapping and saved-change comparison support current experiments. | Broader supported media/project structures, independently checked boundaries and source coverage, with explicit handling of unsupported cases. |
-| **2. Guided Editing** | **Partially demonstrated.** Initial live handoff/capture, a desktop workspace, a later bounded supervised review/correction batch, and shared-navigation checks. | Repeated live navigate → handoff → save → capture cycles; reliable pause/resume, exact current-state navigation and measured latency across representative projects. |
-| **3. Adaptive Automation** | **Experimental, with bounded authorized execution demonstrated.** Eleven automatic edits and one later reviewed edit completed in separate verified continuation work. | Tested rules derived from approved examples, positive/negative and held-out cases, explicit editorial authority, and no duplicate changes. General audio/artistic choices remain blocked. |
-| **4. Integrated Quality Control** | **Working development prototype; broader qualification open.** Embedded preview-first playback, searchable history, scoped approvals, audio simulations, a bounded supervised batch and 17 isolated real-widget case workflows. | Broader repeated review/correction cycles, native-render equivalence, supported restoration paths and preservation under interruption. Preview approval alone does not qualify output. Required for the eventual 0.1 experience. |
+| **2. Guided Editing** | **Partially demonstrated.** Initial live handoff/capture, a desktop workspace, a bounded supervised review/correction batch, shared-navigation checks and reproduction of approved corrections. | Repeated live navigate → handoff → save → capture cycles; reliable pause/resume, exact current-state navigation and measured latency across representative projects. |
+| **3. Adaptive Automation** | **Experimental, with bounded authorized execution demonstrated.** Earlier authorized edits and a complex approved transition were reproduced in bounded work; independent editorial decisions remain experimental. | Tested rules derived from approved examples, positive/negative and held-out cases, explicit editorial authority, and no duplicate changes. General audio/artistic choices remain blocked. |
+| **4. Integrated Quality Control** | **Working development prototype; broader qualification open.** Embedded preview-first playback, searchable history, scoped approvals, audio simulations, a bounded supervised batch and 17 isolated real-widget case workflows. A three-level review-priority scheme is designed, not a released interface or bulk approval. | Broader repeated review/correction cycles, native-render equivalence, supported restoration paths and preservation under interruption. Preview approval alone does not qualify output. Required for the eventual 0.1 experience. |
 | **5. Selective Restoration** | **Bounded live demonstration.** An earlier isolated edit was restored while ten later edits and 37 saved fade settings remained intact. | Complete human correction-and-resume qualification, more supported edit types, dependency/conflict handling and preservation of later work. Several inverse scenarios remain gated. |
-| **6. Product Reliability** | **QA harness and bounded recovery foundations demonstrated; product work remains.** October 27: 94-record audit, 263 local regression tests, 82 separate smoke tests and six bounded native checks; open render/performance defects retained. | Performance, verified backups, crash/interrupted-save tests, understandable history, installation, accessibility and usability testing. No guaranteed recovery claim. |
+| **6. Product Reliability** | **QA harness and bounded recovery foundations demonstrated; product work remains.** October 27: 94-record audit, 263 local regression tests, 82 separate smoke tests and six bounded native checks; November adds 117 focused passing tests and 14 protected hashes matching, separately scoped. General render behavior and performance remain open. | Performance, verified backups, crash/interrupted-save tests, understandable history, installation, accessibility and usability testing. No guaranteed recovery claim. |
 | **7. External Beta** | **Planned; not open.** No external media intake or production pilot is authorized. | Supported-workflow assessment, permission/privacy/retention process, isolated tests, qualified recovery, actionable failure reports and a useful measured workflow. |
 | **8. Future Integrations** | **Planned or exploratory.** Filmora is the initial adapter target. | Separate implementation and qualification for additional editors; feasibility work for possible native processing capabilities. |
 
@@ -86,8 +86,11 @@ does not establish configurable automated rendering or encoding.
   exercised 17 GUI case workflows, eight cross-case flow types, 263 local regression
   tests, 82 separate smoke tests and six bounded native checks; 65 protected hashes
   matched. See the [scoped milestone report](docs/QA_MILESTONE_2026-10-27.md).
-- **Open:** a native rendered-frame discrepancy, 77–107-second difficult navigation
-  checks, missing reconstruction evidence and general final-output qualification.
+- **November 13:** approved frame corrections, audio-tail removal and a complex
+  transition were reproduced with saved-state and focused native checks. See the
+  [November milestone](docs/QA_MILESTONE_2026-11-13.md).
+- **Open:** general native decoder/sampling behavior, difficult navigation,
+  missing reconstruction evidence and general final-output qualification.
 
 These counts belong to different scopes and are not added into a combined
 qualification score. Automated checks do not establish artistic quality.

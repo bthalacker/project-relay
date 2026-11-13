@@ -62,6 +62,20 @@ gated, and no-tail cases do not offer redundant choices.
 It does not apply the treatment in Filmora or certify final rendered output.**
 Native audio Apply remains disabled in the current QC workspace.
 
+## November 13 engineering milestone
+
+Relay reproduced a human-approved complex transition, including picture
+removals, overlapping audio and separate fades, while preserving downstream
+timeline relationships. The disposable reconstruction matched 127 checked
+saved contributions; focused native picture samples matched the approved
+examples. Case-specific unwanted-frame corrections and an audio-tail removal
+were also demonstrated.
+
+These results show reproduction of reviewed edits, not independent artistic
+decisions on unfamiliar video. Native samples have limited scope, and exact
+decoded audio equivalence for the complete composition was not established.
+See the [November 13 milestone](docs/QA_MILESTONE_2026-11-13.md).
+
 ## October 27 engineering QA milestone
 
 | Check | Recorded scope |
@@ -90,9 +104,9 @@ recorded operation history, verified supported recovery, and explicit stops
 when evidence is missing. These are bounded results, not a general recovery
 guarantee.
 
-- **Native render discrepancy remains open:** an isolated export retained a
-  graphic frame even though decoded source evidence and saved geometry indicated
-  a clean start. No accepted correction was applied.
+- **Native verification remains essential:** case-specific corrections removed
+  unwanted frames in focused checks. The general decoder or sampling behavior
+  behind earlier discrepancies remains unresolved.
 - **Navigation is not fast-qualified:** earlier bounded single-seek checks
   passed, but latest difficult checks took about 77–107 seconds and needed
   multiple bounded seek candidates.
